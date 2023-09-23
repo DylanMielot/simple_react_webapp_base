@@ -1,14 +1,13 @@
+import Centered from "../utils/Centered"
+
 export default function Packages({ pages, setPages }) {
 
-    function remove() {
-        setPages([...pages.filter(p => p.id !== 'validation')])
-    }
-    function add() {
-        setPages([...pages, { title: "Validation", id: "validation", isClickable: false }])
-    }
+    var page = pages.filter(p => p.id == 'packages')[0]
 
-    return <div className="flex flex-col">
-        <button className=" text-red-700" onClick={() => { remove() }}>remove validation part</button>
-        <button className=" text-green-700" onClick={() => { add() }}>add validation part</button>
-    </div>
+    return <div className={`w-full h-full flex flex-col `}>
+        <Centered className="w-full h-[60px]">
+            <h1 className="w-[60%] text-center pt-[10px] h-full text-[120%] border-b-[1px] border-black">{page.description}</h1>
+        </Centered>
+        <div className=" text-red-700 h-full">content</div>
+    </div >
 }
