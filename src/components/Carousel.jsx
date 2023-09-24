@@ -7,7 +7,7 @@ import CarouselPage from "./pages/CarouselPage"
 import { memo } from "react"
 import { scroll_axis } from "../app_config"
 
-export default memo(function Carousel({ pages, setPages }) {
+export default function Carousel({ pages, setPages }) {
 
     const nbPages = pages.length
     var classname = "h-full"
@@ -46,4 +46,4 @@ export default memo(function Carousel({ pages, setPages }) {
             </div>
         </div>
     )
-})
+}

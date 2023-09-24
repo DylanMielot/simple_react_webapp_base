@@ -35,7 +35,7 @@ export var links = [
         description: 'Validation des paramètres saisis',
         id: "validation",
         component: "Validation",
-        isClickable: false
+        isClickable: true
     },
     {
         title: "Administration",
