@@ -1,4 +1,5 @@
 import Centered from "../utils/Centered"
+import { ContentPage, TitlePage } from "./CarouselPage"
 
 export default function Clients({ pages, setPages }) {
 
@@ -10,10 +11,13 @@ export default function Clients({ pages, setPages }) {
     }
 
     return <div className={`w-full h-full flex flex-col `}>
-        <Centered className="w-full h-[60px]">
-            <h1 className="w-[60%] text-center pt-[10px] h-full text-[120%] border-b-[1px] border-black">{page.description}</h1>
-        </Centered>
-        <div>content</div>
-        <button onClick={() => activatePage()}>Activate validation page</button>
+        <TitlePage>
+            {page.description}
+        </TitlePage>
+        <ContentPage>
+            <Centered className="h-full">
+                <button onClick={() => activatePage()}>Activate validation page</button>
+            </Centered>
+        </ContentPage>
     </div >
 }

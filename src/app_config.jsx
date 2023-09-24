@@ -36,9 +36,19 @@ export var links = [
         id: "validation",
         component: "Validation",
         isClickable: false
+    },
+    {
+        title: "Administration",
+        description: 'Panneau d\'administration',
+        id: "administration",
+        component: "Administration",
+        isClickable: true
     }
 ]
 
-export var logo_link = "/images/logo.png"
+export var logo = "/images/logo.png"
+
+// Fixer la version y quand le texte du content est trop grand
+export var scroll_axis = "y" // "x" ou "y"
 
 export var default_link = "clients"

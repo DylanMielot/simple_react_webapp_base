@@ -20,3 +20,7 @@
 .scroll-snapx-mandatory {
   scroll-snap-type: x mandatory;
 }
+
+.scroll-snapy-mandatory {
+  scroll-snap-type: y mandatory;
+}
