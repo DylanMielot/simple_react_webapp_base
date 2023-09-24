@@ -2,15 +2,15 @@ import Neomorphism from "../utils/Neomorphism"
 import Centered from "../utils/Centered"
 
 export function TitlePage({ children, className = "" }) {
-    return <Centered className="w-full h-[60px]">
-        <h1 className={`w-[60%] text-center pt-[10px] h-full text-[120%] border-b-[1px] border-black ${className}`}>
+    return <Centered className="w-full h-[60px] bg-slate-400 rounded-t-[20px]">
+        <p className={`text-[120%] ${className}`}>
             {children}
-        </h1>
+        </p>
     </Centered>
 }
 
 export function ContentPage({ children, className = "" }) {
-    return <div className={`w-full h-full overflow-y-auto overflow-x-hidden ${className}`}>
+    return <div className={`w-full h-full p-5 overflow-y-auto overflow-x-hidden ${className}`}>
         {children}
     </div>
 }
