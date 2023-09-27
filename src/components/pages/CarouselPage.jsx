@@ -1,8 +1,8 @@
-import Neomorphism from "../utils/Neomorphism"
 import Centered from "../utils/Centered"
+import { useEffect, useRef } from "react"
 
 export function TitlePage({ children, className = "" }) {
-    return <Centered className="w-full h-[60px] bg-slate-400 rounded-t-[20px]">
+    return <Centered className="w-full h-[60px] bg-slate-400">
         <p className={`text-[120%] ${className}`}>
             {children}
         </p>
@@ -15,13 +15,41 @@ export function ContentPage({ children, className = "" }) {
     </div>
 }
 
-export default function CarouselPage({ children, pages }) {
+export default function CarouselPage({ children, pages, setActive }) {
 
+    var contentBlock = useRef("")
     let pageName = children.type.name
     var content = null
     var page = pages.filter(p => p.component.toUpperCase() == pageName.toUpperCase())
 
-    // On recherche la page dans app_jsx et on charge le children
+    /**
+     * selection de la page actuelle en tant que page active 
+     */
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    useEffect(() => {
+        document.querySelector("#carousel").addEventListener('scroll', () => {
+            if (isInViewport(contentBlock.current)) {
+                setActive(page.id)
+            }
+        })
+    }, [])
+    /**
+     * FIN
+     */
+
+
+    /**
+     * Chargement du composant
+     */
     try {
         if (page.length > 1) {
             throw new Error("More than 1 page with the same component name, check your app_config.jsx")
@@ -36,16 +64,24 @@ export default function CarouselPage({ children, pages }) {
         } else {
             throw new Error("You're not allowed to access this page. Please contact your administrator system.")
         }
-
-        // Si la page n'est pas trouvé dans le app_config.jsx
     } catch (e) {
-        // console.error(e)
         var content = <Centered className="h-full font-bold text-red-600">{e.message}</Centered>
     }
+    /**
+     * FIN
+     */
 
-    return <Centered className="w-full h-full max-h-[100vh] snap-center" id={page.id}>
-        <Neomorphism radius="20px" size={['90%', '90%']}>
+
+
+    /**
+     * Renderer
+     */
+    return <div className="h-full w-full" ref={contentBlock}>
+        <Centered className="w-full h-full max-h-[100vh] snap-center" id={page.id}>
             {content}
-        </Neomorphism>
-    </Centered>
+        </Centered>
+    </div>
+    /**
+     * FIN
+     */
 }

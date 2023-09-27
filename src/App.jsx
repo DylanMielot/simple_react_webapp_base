@@ -10,7 +10,7 @@ function App() {
 
   return <div className='h-full flex'>
     <VerticalNavBar active={active} setActive={setActive} pages={pages} />
-    <Carousel pages={pages} setPages={setPages} />
+    <Carousel pages={pages} setPages={setPages} setActive={setActive} />
   </div>
 }
 

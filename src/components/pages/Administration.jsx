@@ -1,5 +1,5 @@
 import { ContentPage, TitlePage } from "./CarouselPage"
-import { Navigation, NavigationLink } from "../utils/Navigation"
+import { Navigation, NavigationTab } from "../utils/TabsNavigation"
 
 export default function Administration({ pages, setPages }) {
 
@@ -12,15 +12,15 @@ export default function Administration({ pages, setPages }) {
 
         <ContentPage className="relative">
             <Navigation>
-                <NavigationLink title="Create new page">
+                <NavigationTab title="Create new page">
                     <p>test create new page</p>
-                </NavigationLink>
-                <NavigationLink title="Manage pages">
+                </NavigationTab>
+                <NavigationTab title="Manage pages">
                     <p>test manage pages</p>
-                </NavigationLink>
-                <NavigationLink title="Manage access">
+                </NavigationTab>
+                <NavigationTab title="Manage access">
                     <p>Manage access</p>
-                </NavigationLink>
+                </NavigationTab>
             </Navigation>
         </ContentPage>
     </div >

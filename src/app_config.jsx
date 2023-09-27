@@ -48,7 +48,10 @@ export var links = [
 
 export var logo = "/images/logo.png"
 
-// Fixer la version y quand le texte du content est trop grand
 export var scroll_axis = "y" // "x" ou "y"
+
+export var smooth_scroll = false
+
+export var display_scrollbar = false
 
 export var default_link = "clients"
