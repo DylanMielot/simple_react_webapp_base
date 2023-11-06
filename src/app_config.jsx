@@ -1,6 +1,6 @@
 //TODO
--supprimer la prop id, utiliser la prop component a la place
-- dans carouselPage, ne plus passer la prop pages, la donner seulement au parent Caroussel, et la faire passer a tous les children via un clone (cf TabNavigation)
+//- supprimer la prop id, utiliser la prop component a la place
+//- dans carouselPage, ne plus passer la prop pages, la donner seulement au parent Caroussel, et la faire passer a tous les children via un clone (cf TabNavigation)
 
 
 // Pour ajouter une nouvelle page :
