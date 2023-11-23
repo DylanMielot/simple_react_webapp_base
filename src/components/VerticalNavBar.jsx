@@ -16,7 +16,7 @@ export default function VerticalNavBar({ active, setActive, pages }) {
                 var hoverStyle = "hover:text-[120%]"
                 var buttonStyle = "w-full h-full flex justify-center items-center cursor-pointer"
                 var style = "w-full min-h-[50px] h-[15%] max-h-[90px] font-bold transition-all duration-300"
-                if (active === link.id) {
+                if (active === link.component) {
                     activeStyle = "bg-slate-600 text-white text-[120%]"
                 }
                 if (!link.isClickable) {
@@ -25,9 +25,9 @@ export default function VerticalNavBar({ active, setActive, pages }) {
                 }
 
                 return (
-                    <div key={index} className={`${style} ${activeStyle} ${hoverStyle}`} onClick={() => link.isClickable && setActive(link.id)}>
+                    <div key={index} className={`${style} ${activeStyle} ${hoverStyle}`} onClick={() => link.isClickable && setActive(link.component)}>
 
-                        <a href={`#${link.id}`} className={`${buttonStyle}`}>
+                        <a href={`#${link.component}`} className={`${buttonStyle}`}>
                             <span>{link.title}</span>
                         </a>
                     </div>

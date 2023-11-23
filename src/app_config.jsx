@@ -16,35 +16,30 @@ export var links = [
     {
         title: "Clients",
         description: 'Paramétrage des clients',
-        id: "clients",
         component: "Clients",
         isClickable: true
     },
     {
         title: "Packages",
         description: 'Paramétrage des packages',
-        id: "packages",
         component: "Packages",
         isClickable: true
     },
     {
         title: "Produits",
         description: 'Paramétrage des produits hors package',
-        id: "produits",
         component: "Produits",
         isClickable: true
     },
     {
         title: "Validation",
         description: 'Validation des paramètres saisis',
-        id: "validation",
         component: "Validation",
         isClickable: false
     },
     {
         title: "Administration",
         description: 'Panneau d\'administration',
-        id: "administration",
         component: "Administration",
         isClickable: true
     }
@@ -59,4 +54,4 @@ export var smooth_scroll = false
 // peut occasionner quelques bugs dans la vertical navbar si smoothscroll est activé
 export var display_scrollbar = false
 
-export var default_link = "clients"
+export var default_link = "Clients"

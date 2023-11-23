@@ -3,7 +3,7 @@ import { ContentPage, TitlePage } from "./CarouselPage"
 
 export default function Clients({ pages, setPages }) {
 
-    var page = pages.filter(p => p.id == 'clients')[0]
+    var page = pages.filter(p => p.component == 'Clients')[0]
 
     function activatePage() {
         pages.filter(p => p.id === "validation")[0].isClickable = true

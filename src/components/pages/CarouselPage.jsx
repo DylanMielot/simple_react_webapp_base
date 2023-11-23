@@ -40,7 +40,7 @@ export default function CarouselPage({ children, pages, setActive }) {
         if (!smooth_scroll) {
             document.querySelector("#carousel").addEventListener('scroll', () => {
                 if (isInViewport(contentBlock.current)) {
-                    setActive(page.id)
+                    setActive(page.component)
                 }
             })
         }
@@ -77,7 +77,7 @@ export default function CarouselPage({ children, pages, setActive }) {
      * Renderer
      */
     return <div className="h-full w-full" ref={contentBlock}>
-        <Centered className="w-full h-full max-h-[100vh] snap-center" id={page.id}>
+        <Centered className="w-full h-full max-h-[100vh] snap-center" id={page.component}>
             {content}
         </Centered>
     </div>

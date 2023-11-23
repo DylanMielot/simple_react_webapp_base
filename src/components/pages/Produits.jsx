@@ -2,7 +2,7 @@ import { ContentPage, TitlePage } from "./CarouselPage"
 
 export default function Produits({ pages, setPages }) {
 
-    var page = pages.filter(p => p.id == 'produits')[0]
+    var page = pages.filter(p => p.component == 'Produits')[0]
 
     return <div className={`w-full h-full flex flex-col `}>
         <TitlePage>

@@ -3,7 +3,7 @@ import { Navigation, NavigationTab } from "../utils/TabsNavigation"
 
 export default function Packages({ pages, setPages }) {
 
-    var page = pages.filter(p => p.id == 'packages')[0]
+    var page = pages.filter(p => p.component == 'Packages')[0]
 
     return <div className={`w-full h-full flex flex-col `}>
         <TitlePage>
