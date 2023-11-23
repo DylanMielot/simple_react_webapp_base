@@ -1,9 +1,3 @@
-import Clients from "./pages/Clients"
-import Packages from "./pages/Packages"
-import Produits from "./pages/Produits"
-import Validation from "./pages/Validation"
-import Administration from "./pages/Administration"
-import CarouselPage from "./pages/CarouselPage"
 import { scroll_axis, smooth_scroll, display_scrollbar } from "../app_config"
 
 function CarouselComponent({ children }) {
@@ -37,29 +31,11 @@ function CarouselComponent({ children }) {
     </div>
 }
 
-export default function Carousel({ pages, setPages, setActive }) {
+export default function Carousel({ children }) {
 
     return (
         <CarouselComponent>
-            <CarouselPage pages={pages} setActive={setActive}>
-                <Clients pages={pages} setPages={setPages} />
-            </CarouselPage>
-
-            <CarouselPage pages={pages} setActive={setActive}>
-                <Packages pages={pages} setPages={setPages} />
-            </CarouselPage>
-
-            <CarouselPage pages={pages} setActive={setActive}>
-                <Produits pages={pages} setPages={setPages} />
-            </CarouselPage>
-
-            <CarouselPage pages={pages} setActive={setActive}>
-                <Validation pages={pages} setPages={setPages} />
-            </CarouselPage>
-
-            <CarouselPage pages={pages} setActive={setActive}>
-                <Administration pages={pages} setPages={setPages} />
-            </CarouselPage>
+            {children}
         </CarouselComponent>
     )
 }
