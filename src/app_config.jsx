@@ -1,7 +1,7 @@
 //TODO
-//- supprimer la prop id, utiliser la prop component a la place
+//- supprimer la prop id, utiliser la prop component a la place ==> FAIT, faire les vérifications
 //- dans carouselPage, ne plus passer la prop pages, la donner seulement au parent Caroussel, et la faire passer a tous les children via un clone (cf TabNavigation) + ajouter une vérification dans CarousselPage, pages != null + verification pour chaque prop des pages, ajouter une valeur par défaut ""
-
+// FAIT A MOITIER => Pages déplacés dans app.jsx, RAF faire passer les props aux childrens
 
 // Pour ajouter une nouvelle page :
 // - ajouter un objet à "links" et le renseigner
