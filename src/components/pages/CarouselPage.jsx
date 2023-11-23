@@ -1,5 +1,6 @@
 import Centered from "../utils/Centered"
 import { useEffect, useRef } from "react"
+import { smooth_scroll } from "../../app_config"
 
 export function TitlePage({ children, className = "" }) {
     return <Centered className="w-full h-[60px] bg-slate-400">
@@ -36,15 +37,14 @@ export default function CarouselPage({ children, pages, setActive }) {
     }
 
     useEffect(() => {
-        document.querySelector("#carousel").addEventListener('scroll', () => {
-            if (isInViewport(contentBlock.current)) {
-                setActive(page.id)
-            }
-        })
+        if (!smooth_scroll) {
+            document.querySelector("#carousel").addEventListener('scroll', () => {
+                if (isInViewport(contentBlock.current)) {
+                    setActive(page.id)
+                }
+            })
+        }
     }, [])
-    /**
-     * FIN
-     */
 
 
     /**

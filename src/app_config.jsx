@@ -52,6 +52,7 @@ export var scroll_axis = "y" // "x" ou "y"
 
 export var smooth_scroll = false
 
+// peut occasionner quelques bugs dans la vertical navbar si smoothscroll est activé
 export var display_scrollbar = false
 
 export var default_link = "clients"
