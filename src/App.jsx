@@ -6,7 +6,6 @@ import Administration from "./components/pages/Administration"
 
 import VerticalNavBar from "./components/VerticalNavBar"
 import Carousel from "./components/Carousel"
-import CarouselPage from "./components/pages/CarouselPage"
 import { links, default_link } from "./app_config"
 import { useState } from "react"
 
