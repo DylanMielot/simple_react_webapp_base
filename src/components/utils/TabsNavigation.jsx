@@ -28,6 +28,7 @@ export function Navigation({ children, className = "" }) {
                 links.push(cloneElement(link, { key: link.props.title, 'active': active, 'setActive': setActive }))
             })
         } else {
+            contents[children.props.title] = children.props.children
             links.push(cloneElement(children, { key: link.props.title, 'active': active, 'setActive': setActive }))
         }
     } catch (e) {

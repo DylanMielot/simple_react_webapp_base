@@ -6,7 +6,7 @@ export default function Clients({ pages, setPages }) {
     var page = pages.filter(p => p.component == 'Clients')[0]
 
     function activatePage() {
-        pages.filter(p => p.id === "validation")[0].isClickable = true
+        pages.filter(p => p.component === "Validation")[0].isClickable = true
         setPages([...pages])
     }
 

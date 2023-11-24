@@ -1,6 +1,8 @@
 import { scroll_axis, smooth_scroll, display_scrollbar } from "../app_config"
 
-function CarouselComponent({ children }) {
+import CarouselPage from "./pages/CarouselPage"
+
+export default function Carousel({ pages, setPages, setActive, children }) {
 
     // default values
     var pagesCount = Array.isArray(children) ? children.length : 1
@@ -24,18 +26,26 @@ function CarouselComponent({ children }) {
         }
     }
 
-    return <div id="carousel" className={`relative w-full min-w-[500px] h-full ${scrollbar} ${scrollSnap} ${smooth} z-0`}>
-        <div className={`flex ${classname}`} style={style}>
-            {children}
-        </div>
-    </div>
-}
-
-export default function Carousel({ children }) {
+    // Ajout d'un composant CarouselPage aux childrens
+    let childs = []
+    try {
+        if (Array.isArray(children)) {
+            children.forEach((link) => {
+                childs.push(<CarouselPage key={link.type.name} setPages={setPages} pages={pages} setActive={setActive}>{link}</CarouselPage>)
+            })
+        } else {
+            childs.push(<CarouselPage key={children.type.name} pages={pages} setPages={setPages} setActive={setActive}>{children}</CarouselPage>)
+        }
+    } catch (e) {
+        console.error("Erreur lors du chargement des composants du carousel")
+        console.error(e)
+    }
 
     return (
-        <CarouselComponent>
-            {children}
-        </CarouselComponent>
+        <div id="carousel" className={`relative w-full min-w-[500px] h-full ${scrollbar} ${scrollSnap} ${smooth} z-0`}>
+            <div className={`flex ${classname}`} style={style}>
+                {childs}
+            </div>
+        </div>
     )
 }

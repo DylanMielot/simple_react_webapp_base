@@ -19,25 +19,15 @@ function App() {
     <VerticalNavBar active={active} setActive={setActive} pages={pages} />
 
     <Carousel pages={pages} setPages={setPages} setActive={setActive}>
-      <CarouselPage pages={pages} setActive={setActive}>
-        <Clients pages={pages} setPages={setPages} />
-      </CarouselPage>
+      <Clients pages={pages} setPages={setPages} />
 
-      <CarouselPage pages={pages} setActive={setActive}>
-        <Packages pages={pages} setPages={setPages} />
-      </CarouselPage>
+      <Packages pages={pages} setPages={setPages} />
 
-      <CarouselPage pages={pages} setActive={setActive}>
-        <Produits pages={pages} setPages={setPages} />
-      </CarouselPage>
+      <Produits pages={pages} setPages={setPages} />
 
-      <CarouselPage pages={pages} setActive={setActive}>
-        <Validation pages={pages} setPages={setPages} />
-      </CarouselPage>
+      <Validation pages={pages} setPages={setPages} />
 
-      <CarouselPage pages={pages} setActive={setActive}>
-        <Administration pages={pages} setPages={setPages} />
-      </CarouselPage>
+      <Administration pages={pages} setPages={setPages} />
     </Carousel>
   </div>
 }
