@@ -26,7 +26,7 @@ export default function Carousel({ pages, setPages, setActive, children }) {
         }
     }
 
-    // Ajout d'un composant CarouselPage aux childrens
+    // Ajout d'un composant CarouselPage aux childrens et des props
     let childs = []
     try {
         if (Array.isArray(children)) {
